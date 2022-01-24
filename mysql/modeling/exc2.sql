@@ -12,11 +12,15 @@ id varchar(100),
 regdate datetime
 );
 
--- 테이블 삭제
-
 create table member2 (
  seq int,
  name varchar(100),
  id varchar(100),
  regdate datetime
 );
+
+-- 테이블 삭제
+
+drop table member2;
+drop table member;
+drop table member;
