@@ -107,6 +107,13 @@ a.name
 from book5 a
 left join review5 b on b.book5_no = a.no;
 
+-- 반대로
+select
+b.comment
+, a.name
+from book5 a
+left join review5 b on b.book5_no = a.no;
+
 select
 a.name
 , b.comment
