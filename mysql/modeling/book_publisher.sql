@@ -16,7 +16,7 @@ ENGINE = InnoDB;
 insert into book2(
  name
  , publisher_cd 
- ) values('프로그래밍가이드북', 1);
+ ) values('프로그래밍가이드북실전편',5);
  
  
 insert into publisher(
@@ -32,10 +32,17 @@ name) values (
 , a.name
 , a.publisher_cd
 , b.name
+from book2 as a -- 마스터 테이블
+inner join publisher as b on b.no= a.publisher_cd;
+-- 테이블 조인을 해야 하면 테이블 이름에 알리아스를 넣는다(alias)
+
+ select
+ a.no
+, a.name
+, a.publisher_cd
+, b.name
 from book2 as a
 left join publisher as b on b.no= a.publisher_cd;
-
--- 테이블 조인을 해야 하면 테이블 이름에 알리아스를 넣는다(alias)
 
 drop table book2;
 drop table publisher;
